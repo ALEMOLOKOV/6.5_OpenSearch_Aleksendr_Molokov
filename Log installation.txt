@@ -1,0 +1,66 @@
+vagrant@vagrant:~/opensearch/opensearch-2.4.1$ ./opensearch-tar-install.sh
+**************************************************************************
+** This tool will be deprecated in the next major release of OpenSearch **
+** https://github.com/opensearch-project/security/issues/1755           **
+**************************************************************************
+OpenSearch Security Demo Installer
+ ** Warning: Do not use on production or public reachable systems **
+Basedir: /home/vagrant/opensearch/opensearch-2.4.1
+OpenSearch install type: .tar.gz on DISTRIB_ID=Ubuntu
+OpenSearch config dir: /home/vagrant/opensearch/opensearch-2.4.1/config
+OpenSearch config file: /home/vagrant/opensearch/opensearch-2.4.1/config/opensearch.yml
+OpenSearch bin dir: /home/vagrant/opensearch/opensearch-2.4.1/bin
+OpenSearch plugins dir: /home/vagrant/opensearch/opensearch-2.4.1/plugins
+OpenSearch lib dir: /home/vagrant/opensearch/opensearch-2.4.1/lib
+Detected OpenSearch Version: x-content-2.4.1
+Detected OpenSearch Security Version: 2.4.1.0
+/home/vagrant/opensearch/opensearch-2.4.1/config/opensearch.yml seems to be already configured for Security. Quit.
+done security
+done plugins
+k-NN libraries not found in LD_LIBRARY_PATH. Updating path to: :/home/vagrant/opensearch/opensearch-2.4.1/plugins/opensearch-knn/lib.
+Starting OpenSearch
+Exception in thread "main" java.nio.file.AccessDeniedException: /home/vagrant/opensearch/opensearch-2.4.1/config/opensearch.keystore
+        at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:90)
+        at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)
+        at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+        at java.base/sun.nio.fs.UnixFileSystemProvider.newFileChannel(UnixFileSystemProvider.java:181)
+        at java.base/java.nio.channels.FileChannel.open(FileChannel.java:298)
+        at java.base/java.nio.channels.FileChannel.open(FileChannel.java:357)
+        at org.apache.lucene.store.NIOFSDirectory.openInput(NIOFSDirectory.java:78)
+        at org.apache.lucene.store.Directory.openChecksumInput(Directory.java:156)
+        at org.apache.lucene.backward_codecs.store.EndiannessReverserUtil.openChecksumInput(EndiannessReverserUtil.java:48)
+        at org.opensearch.common.settings.KeyStoreWrapper.load(KeyStoreWrapper.java:246)
+        at org.opensearch.common.settings.KeyStoreWrapper.load(KeyStoreWrapper.java:230)
+        at org.opensearch.common.settings.HasPasswordKeyStoreCommand.execute(HasPasswordKeyStoreCommand.java:61)
+        at org.opensearch.cli.EnvironmentAwareCommand.execute(EnvironmentAwareCommand.java:104)
+        at org.opensearch.cli.Command.mainWithoutErrorHandling(Command.java:138)
+        at org.opensearch.cli.MultiCommand.execute(MultiCommand.java:104)
+        at org.opensearch.cli.Command.mainWithoutErrorHandling(Command.java:138)
+        at org.opensearch.cli.Command.main(Command.java:101)
+        at org.opensearch.common.settings.KeyStoreCli.main(KeyStoreCli.java:56)
+WARNING: A terminally deprecated method in java.lang.System has been called
+WARNING: System::setSecurityManager has been called by org.opensearch.bootstrap.OpenSearch (file:/home/vagrant/opensearch/opensearch-2.4.1/lib/opensearch-2.4.1.jar)
+WARNING: Please consider reporting this to the maintainers of org.opensearch.bootstrap.OpenSearch
+WARNING: System::setSecurityManager will be removed in a future release
+Exception in thread "main" org.opensearch.bootstrap.BootstrapException: java.nio.file.AccessDeniedException: /home/vagrant/opensearch/opensearch-2.4.1/config/opensearch.keystore
+Likely root cause: java.nio.file.AccessDeniedException: /home/vagrant/opensearch/opensearch-2.4.1/config/opensearch.keystore
+        at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:90)
+        at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)
+        at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+        at java.base/sun.nio.fs.UnixFileSystemProvider.newFileChannel(UnixFileSystemProvider.java:181)
+        at java.base/java.nio.channels.FileChannel.open(FileChannel.java:298)
+        at java.base/java.nio.channels.FileChannel.open(FileChannel.java:357)
+        at org.apache.lucene.store.NIOFSDirectory.openInput(NIOFSDirectory.java:78)
+        at org.apache.lucene.store.Directory.openChecksumInput(Directory.java:156)
+        at org.apache.lucene.backward_codecs.store.EndiannessReverserUtil.openChecksumInput(EndiannessReverserUtil.java:48)
+        at org.opensearch.common.settings.KeyStoreWrapper.load(KeyStoreWrapper.java:246)
+        at org.opensearch.common.settings.KeyStoreWrapper.load(KeyStoreWrapper.java:230)
+        at org.opensearch.bootstrap.Bootstrap.loadSecureSettings(Bootstrap.java:257)
+        at org.opensearch.bootstrap.Bootstrap.init(Bootstrap.java:368)
+        at org.opensearch.bootstrap.OpenSearch.init(OpenSearch.java:180)
+        at org.opensearch.bootstrap.OpenSearch.execute(OpenSearch.java:171)
+        at org.opensearch.cli.EnvironmentAwareCommand.execute(EnvironmentAwareCommand.java:104)
+        at org.opensearch.cli.Command.mainWithoutErrorHandling(Command.java:138)
+        at org.opensearch.cli.Command.main(Command.java:101)
+        at org.opensearch.bootstrap.OpenSearch.main(OpenSearch.java:137)
+        at org.opensearch.bootstrap.OpenSearch.main(OpenSearch.java:103)
