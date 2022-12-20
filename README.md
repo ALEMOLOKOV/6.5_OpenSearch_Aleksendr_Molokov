@@ -12,5 +12,5 @@
 
 Лог при установке
 
-[Новый текстовый документ.txt](https://github.com/ALEMOLOKOV/6.5_OpenSearch_Aleksendr_Molokov/files/10272048/default.txt)
+[Log installation](https://github.com/ALEMOLOKOV/6.5_OpenSearch_Aleksendr_Molokov/commit/a5b2079c0a7d94bc0da7a12ab06677f440400b18)
 
